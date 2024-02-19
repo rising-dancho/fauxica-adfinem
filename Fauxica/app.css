@@ -1,0 +1,372 @@
+:root {
+    /* Font sizes */
+    --font-14px: 0.875rem;
+    --font-16px: 1rem;
+    --font-18px: 1.125rem;
+    --font-33px: 2.0625rem;
+    --font-52px: 3.25rem;
+
+    /* Margin and Paddings  */
+    --mg-pd-10px: 0.625rem;
+    --mg-pd-11px: 0.6875rem;
+    --mg-pd-16px: 1rem;
+    --mg-pd-18px: 1.125rem;
+    --mg-pd-22px: 1.375rem;
+    --mg-pd-23px: 1.4375rem;
+    --mg-pd-30px: 1.875rem;
+    --mg-pd-35px: 2.1875rem;
+    --mg-pd-36px: 2.25rem;
+    --mg-pd-40px: 2.5rem;
+    --mg-pd-41px: 2.5625rem;
+    --mg-pd-45px: 2.8125rem;
+    --mg-pd-64px: 4rem;
+    --mg-pd-69px: 4.3125rem;
+    --mg-pd-88px: 5.5rem;
+
+    /* Border Radius */
+    --border-8px: 0.5rem;
+}
+
+body {
+    margin: 0;
+    font-family: 'Poppins';
+}
+
+body .container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+header a,
+main a {
+    text-decoration: none;
+    color: black;
+}
+
+/* Navbar */
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: var(--mg-pd-36px);
+    margin-bottom: var(--mg-pd-69px);
+    /* border: 1px solid red; */
+}
+
+header .logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+header nav ul {
+    display: flex;
+    gap: var(--mg-pd-41px);
+    list-style: none;
+    text-transform: uppercase;
+    font-size: var(--font-16px);
+    /* border: 1px solid red; */
+    margin: 0;
+    padding: 0;
+}
+
+header a {
+    position: relative;
+    padding-bottom: 5px;
+
+}
+
+header nav a.active:before {
+    position: absolute;
+    content: "";
+    width: 45%;
+    height: 1px;
+    border-bottom: 2.5px solid black;
+    bottom: 0px;
+}
+
+header nav a:before {
+    position: absolute;
+    content: "";
+    width: 0%;
+    height: 1px;
+    border-bottom: 2.5px solid black;
+    bottom: 0px;
+    transition: width .3s;
+}
+
+/* micro interaction */
+header nav a:hover:before {
+    width: 45%;
+}
+
+/* Hero Section */
+
+main {
+    display: flex;
+    gap: var(--mg-pd-88px);
+    align-items: center;
+    /* border: 3px solid #D66B6B; */
+}
+
+/* -> Left column */
+
+main h1 {
+    font-family: 'Playfair Display';
+    font-size: var(--font-52px);
+    font-weight: 300;
+    margin: 0;
+    margin-top: var(--mg-pd-35pxpx);
+}
+
+main .subhead {
+    font-size: var(--font-18px);
+}
+
+main .cta-btns,
+main .secondary-cta {
+    display: flex;
+    gap: var(--mg-pd-22px);
+    align-items: center;
+}
+
+main .cta-btns {
+    margin-top: var(--mg-pd-64px);
+    margin-bottom: var(--mg-pd-45px);
+}
+
+main .primary-cta {
+    color: #000;
+    font-family: Poppins;
+    font-weight: 700;
+    background-color: #F2F0DFF1;
+    font-size: var(--font-18px);
+    padding: var(--mg-pd-16px) var(--mg-pd-23px);
+    align-items: center;
+    border-radius: var(--border-8px);
+    /* transition: .23s ease; */
+}
+
+main .primary-cta:hover {
+    background-color: #EAE7CCF1;
+}
+
+main .secondary-cta {
+    display: flex;
+    gap: var(--mg-pd-10px);
+    padding: var(--mg-pd-16px) 0;
+    color: black;
+    font-family: Poppins;
+    font-weight: 300;
+    font-size: var(--font-18px);
+}
+
+/* Micro interaction */
+main .secondary-cta:hover span {
+    text-decoration: underline;
+}
+
+main .secondary-cta .arrow {
+    width: 20px;
+    transition: transform .23s;
+}
+
+/* Micro interaction */
+main .secondary-cta:hover .arrow {
+    transform: translateX(10px);
+
+}
+
+main .announcement {
+    display: flex;
+    align-items: start;
+    gap: var(--mg-pd-30px);
+    border: 1px solid black;
+    border-radius: var(--border-8px);
+    position: relative;
+    padding: var(--mg-pd-40px) var(--mg-pd-30px);
+}
+
+main .announcement::before {
+    position: absolute;
+    content: "";
+    background: url("assets/Confetti.svg");
+    width: 103.92px;
+    height: 85.45px;
+    top: 15px;
+    left: -30px;
+    z-index: 2;
+}
+
+main .announcement .employees {
+    font-size: var(--font-33px);
+    margin: 0;
+    font-weight: 200;
+    line-height: 100%;
+}
+
+main .announcement .details {
+    font-size: var(--font-14px);
+    margin: 0;
+}
+
+/* -> Right column */
+
+main .right-column {
+    height: 68vh;
+}
+
+main .right-column {
+    display: grid;
+    gap: var(--mg-pd-16px);
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(36, 1fr);
+}
+
+main .card {
+    display: flex;
+    align-items: end;
+    border-radius: var(--border-8px);
+    padding: var(--mg-pd-11px);
+    transition: 800ms all;
+}
+
+main .card:hover .card-details {
+    transform: translateY(-15%);
+}
+
+main .card-sport {
+    grid-column-start: 1;
+    grid-column-start: 2;
+    grid-row-start: 7;
+    grid-row-end: 34;
+    background-image: url(./assets/shoes.jpg);
+    background-size: cover;
+    background-position: center;
+    width: 274px;
+    position: relative;
+}
+
+main .card-sport:hover {
+    /* Zoom in by 1.5x */
+    background-size: 150%;
+    /* zoom position via x and y axis  */
+    background-position: 50% 100%;
+}
+
+main .card-sport:before {
+    position: absolute;
+    content: "";
+    background: url(assets/tag.svg) no-repeat;
+    width: 100%;
+    height: 100%;
+    top: 15px;
+    left: -85px;
+    /* pointer-events: help make 
+   links still clickable for .card-sport */
+    pointer-events: none;
+}
+
+
+main .card-lifestyle {
+    grid-column-start: 2;
+    grid-column-start: 3;
+    grid-row-start: 1;
+    grid-row-end: 18;
+    background-image: url(./assets/sweater.jpg);
+    background-size: cover;
+    background-position: center;
+    width: 274px;
+}
+
+main .card-lifestyle:hover {
+    /* Zoom in by 1.5x */
+    background-size: 120%;
+    /* zoom position via x and y axis  */
+    background-position: 50% 80%;
+}
+
+
+main .card-fashion {
+    grid-column-start: 2;
+    grid-column-start: 3;
+    grid-row-start: 18;
+    grid-row-end: 36;
+    background-image: url(./assets/dress.jpg);
+    background-size: cover;
+    background-position: center;
+    width: 275px;
+}
+
+main .card-fashion:hover {
+    /* Zoom in by 1.5x */
+    background-size: 200%;
+    /* zoom position via x and y axis  */
+    background-position: 50% 100%;
+}
+
+main .card-details {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    border-radius: var(--border-8px);
+    padding: var(--mg-pd-11px) var(--mg-pd-23px);
+    width: 100%;
+    height: 85px;
+    transition: 800ms all;
+}
+
+main .right-column h3 {
+    font-size: var(--font-16px);
+    font-weight: bold;
+    margin: 0;
+}
+
+main .product-desc {
+    font-size: var(--font-14px);
+    margin: 0;
+    margin-top: 4px;
+    color: #3F3F3F;
+}
+
+main .price {
+    font-size: var(--font-18px);
+}
+
+/* Intro Animation */
+
+/* -> pull down transition */
+.overlay {
+    position: absolute;
+    z-index: 999;
+    background-color: white;
+    width: 100%;
+    height: 100%;
+    /* animation: reveal 1s cubic-bezier(0.19, 1, 0.22, 1) forwards; */
+    animation: reveal 1s ease-in forwards;
+    transform-origin: bottom;
+}
+
+@keyframes reveal {
+    from {
+        transform: scaleY(1);
+    }
+    to {
+        transform: scaleY(0);
+    }
+}
+
+/* -> zoom in */
+main {
+    animation: growIn 2s cubic-bezier(0.075, 0.82, 0.165, 1) forwards;
+    transform: scale(.6);
+}
+
+@keyframes growIn {
+    to {
+        transform: scale(1);
+    }
+}
